@@ -8,14 +8,14 @@ export default {
 </script>
 
 <template>
-    <ul class="pokemon-card" v-for="pokemon in store.pokemon">
-        <li>
+    <div class="pokemon-card" v-for="pokemon in store.pokemon">
+        <div>
             <img :src="pokemon.imageUrl" :alt="pokemon.name" class="img-fluid rounded-circle">
-        </li>
-        <li>{{ pokemon.number }}</li>
-        <li>{{ pokemon.name }}</li>
-        <li>{{ pokemon.type1 }}</li>
-    </ul>
+        </div>
+        <div>{{ pokemon.number }}</div>
+        <div>{{ pokemon.name }}</div>
+        <div>{{ pokemon.type1 }}</div>
+    </div>
 </template>
 
-<style lang="scss"></style>
+<style></style>
