@@ -24,7 +24,7 @@ export default {
   <div class="container">
     <div class="row card-container">
       <div class="pokemon-card" v-for="pokèmon in pokèmon">
-        <img :src="pokèmon.imageUrl" alt="" class="img-fluid rounded-circle">
+        <img :src="pokèmon.imageUrl" :alt="pokèmon.name">
         <div>{{ pokèmon.number }}</div>
         <div>{{ pokèmon.name }}</div>
         <div>{{ pokèmon.type1 }}</div>
