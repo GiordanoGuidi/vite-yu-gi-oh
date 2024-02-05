@@ -1,17 +1,16 @@
 <script>
 import axios from 'axios';
-const endpoint = 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons'
+const endpoint = 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons';
+import { store } from './assets/data/store'
+import AppPokemonCard from './components/AppPokemonCard.vue'
 export default {
   name: 'App',
-  data: () => ({
-    pokèmon: []
-  })
+  components: { AppPokemonCard },
 
-  ,
   created() {
     axios.get(endpoint).then(res => {
-      this.pokèmon = res.data.docs
-      console.log(this.pokèmon)
+      store.pokemon = res.data.docs
+
 
     })
   }
@@ -22,17 +21,8 @@ export default {
 
 <template>
   <div class="container">
-    <div class="row card-container">
-      <div class="pokemon-card" v-for="pokèmon in pokèmon">
-        <img :src="pokèmon.imageUrl" :alt="pokèmon.name">
-        <div>{{ pokèmon.number }}</div>
-        <div>{{ pokèmon.name }}</div>
-        <div>{{ pokèmon.type1 }}</div>
-      </div>
-
-
-
-
+    <div class="row card-container p-4">
+      <AppPokemonCard />
     </div>
 
   </div>
