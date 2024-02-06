@@ -13,15 +13,14 @@ export default {
     //CHIAMATA API X VISUALIZZARE PRIMI 10 POKEMON
     fetchPokemon(endpoint) {
       axios.get(endpoint).then(res => {
-        store.pokemon = res.data.docs
+        store.pokemon = res.data.docs;
       })
     },
     //CHIAMATA API IN BASE AL TIPO DI POKEMON
-    serchTypes(searchType) {
+    searchTypes(searchType) {
       const searchEndpoint = `${endpoint}?eq[type1]=${searchType}`;
       this.fetchPokemon(searchEndpoint)
     },
-
   },
 
   // ARRAY POKEMON IN STORE
@@ -43,8 +42,7 @@ export default {
   <div class="container">
     <!--HEADER-->
     <header class="d-flex justify-content-end mb-4">
-      <SearchForm @submit-serch-type="serchTypes" />
-
+      <SearchForm @submit-serch-type="searchTypes" @submit-all-pokemon="fetchPokemon" />
     </header>
 
 

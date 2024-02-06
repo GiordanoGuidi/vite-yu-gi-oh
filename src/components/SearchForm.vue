@@ -26,13 +26,14 @@ export default {
         ]
 
     }),
-    emits: ['submit-serch-type'],
+    emits: ['submit-search-type', 'submit-all-pokemon'],
 }
 </script>
 
 <template>
     <select class="form-select w-50" size="3" aria-label="size 3 select example" v-model="searchType">
-        <option :value="pokemonType" v-for="pokemonType in pokemonType" @click="$emit('submit-serch-type', searchType)">{{
+        <option @click="$emit('submit-all-pokemon')">All Pokemon</option>
+        <option :value="pokemonType" v-for="pokemonType in pokemonType" @click="$emit('submit-search-type', searchType)">{{
             pokemonType
         }}
         </option>
