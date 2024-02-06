@@ -10,9 +10,17 @@ export default {
   name: 'App',
   components: { AppMain, SearchForm },
   methods: {
+    //CHIAMATA API X VISUALIZZARE PRIMI 10 POKEMON
+    fetchPokemon(endpoint) {
+      axios.get(endpoint).then(res => {
+        store.pokemon = res.data.docs
+      })
+    },
+    //CHIAMATA API IN BASE AL TIPO DI POKEMON
     serchTypes(searchType) {
-      console.log('ciao', searchType)
-    }
+      const searchEndpoint = `${endpoint}?eq[type1]=${searchType}`;
+      this.fetchPokemon(searchEndpoint)
+    },
 
   },
 
@@ -20,11 +28,11 @@ export default {
   created() {
     axios.get(endpoint).then(res => {
       store.pokemon = res.data.docs
-    })
-    // ARRAY POKEMON TYPE IN STORE
-    axios.get(endpointType).then(res => {
-      store.type = res.data
-    })
+    }),
+      // ARRAY POKEMON TYPE IN STORE
+      axios.get(endpointType).then(res => {
+        store.type = res.data
+      })
   }
 
 }
