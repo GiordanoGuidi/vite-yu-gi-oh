@@ -1,13 +1,14 @@
 <script>
 import axios from 'axios';
 const endpoint = 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons';
-const endpointType = 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons/types1'
-import AppMain from './components/AppMain.vue'
-import { store } from './assets/data/store'
+const endpointType = 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons/types1';
+import AppMain from './components/AppMain.vue';
+import SearchForm from './components/SearchForm.vue';
+import { store } from './assets/data/store';
 
 export default {
   name: 'App',
-  components: { AppMain },
+  components: { AppMain, SearchForm },
 
   // ARRAY POKEMON IN STORE
   created() {
@@ -27,8 +28,8 @@ export default {
 <template>
   <div class="container">
     <!--HEADER-->
-    <header>
-
+    <header class="d-flex justify-content-end mb-4">
+      <SearchForm />
 
     </header>
 
