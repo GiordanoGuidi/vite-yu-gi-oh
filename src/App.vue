@@ -9,6 +9,12 @@ import { store } from './assets/data/store';
 export default {
   name: 'App',
   components: { AppMain, SearchForm },
+  methods: {
+    serchTypes(searchType) {
+      console.log('ciao', searchType)
+    }
+
+  },
 
   // ARRAY POKEMON IN STORE
   created() {
@@ -29,7 +35,7 @@ export default {
   <div class="container">
     <!--HEADER-->
     <header class="d-flex justify-content-end mb-4">
-      <SearchForm />
+      <SearchForm @submit-serch-type="serchTypes" />
 
     </header>
 
