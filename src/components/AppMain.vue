@@ -13,8 +13,8 @@ export default {
 <template>
     <main>
         <section id="pokemon-list">
-            <div class="row card-container p-4">
-                <div class="col-" v-for=" pokemon in store.pokemon">
+            <div class="row card-container p-4 row-cols-2 row-cols-md-3 row-cols-lg-5 ">
+                <div class="col" v-for=" pokemon in store.pokemon">
                     <AppPokemonCard :name="pokemon.name" :image="pokemon.imageUrl" :number="pokemon.number"
                         :type="pokemon.type1" />
                 </div>

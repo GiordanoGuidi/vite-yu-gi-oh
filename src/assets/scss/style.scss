@@ -15,9 +15,6 @@ body {
 
 
 /*MAIN*/
-main {
-    width: 100%;
-}
 
 .container {
     width: 1200px;
@@ -28,8 +25,6 @@ main {
 }
 
 .card-container {
-    height: 100%;
-    width: 100%;
     background-color: #62666B;
     border-radius: 20px;
 }
@@ -43,14 +38,15 @@ main {
 
 }
 
-.col- {
-    width: 20%;
-    height: auto;
-    border: 2px solid red;
+.col {
     display: flex;
     align-items: center;
+    justify-content: center;
+    padding: 10px;
 }
 
 img {
     height: 150px;
+    width: 200px;
+    padding-bottom: 10px;
 }

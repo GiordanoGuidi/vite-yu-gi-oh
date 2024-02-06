@@ -14,9 +14,9 @@ export default {
 
 <template>
     <div class="pokemon-card">
-        <img :src="image" :alt="name" class="img-fluid rounded-circle">
+        <img :src="image" :alt="name" class="rounded-circle">
         <div>{{ number }}</div>
-        <div>{{ name }}</div>
+        <div class="fw-bolder">{{ name }}</div>
         <div>{{ type }}</div>
     </div>
 </template>
